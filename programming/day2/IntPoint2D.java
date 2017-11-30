@@ -58,9 +58,4 @@ public int hashcode(){
 return (this.getX()<<16)+this.getY();
 }
 
-//main method
-public static void main(String[] args){
-//creating new IntPoint2D object
-  // IntPoint2D point_a= new IntPoint2D(1,5);
-}
 }
