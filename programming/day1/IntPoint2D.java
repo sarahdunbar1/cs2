@@ -3,7 +3,7 @@
 
 import java.lang.Math;
 
-public class IntPoint2D{
+public class IntPoint2D implements IIntPoint2D{
 private int _X;
 private int _Y;
 
@@ -23,7 +23,7 @@ public int getY(){
 }
 
 //Function that computes the manhattanDistance from one point to another
-public int manhattanDistance(IntPoint2D i){
+public int manhattanDistance(IIntPoint2D i){
 int diff_x=Math.abs(this.getX()-i.getX());
 int diff_y=Math.abs(this.getY()-i.getY());
 int md=diff_x+diff_y;
@@ -36,7 +36,7 @@ public String toString(){
 }
 
 //Function that checks the Euclidean distance from one point to another
-public double distance(IntPoint2D i){
+public double distance(IIntPoint2D i){
   int _x=(int)Math.pow(this.getX()-i.getX(), 2);
   int _y=(int)Math.pow(this.getY()-i.getY(), 2);
   double dist=Math.sqrt(_x+_y);
@@ -44,7 +44,7 @@ public double distance(IntPoint2D i){
 }
 
 //check if one IntPoint2D object is equal to another one
-public boolean equals(IntPoint2D other){
+public boolean equals(IIntPoint2D other){
   if (this.getX()==other.getX() && this.getY()==other.getY()){
     return true;
   }
@@ -61,6 +61,6 @@ return (this.getX()<<16)+this.getY();
 //main method
 public static void main(String[] args){
 //creating new IntPoint2D object
-  IntPoint2D point_a= new IntPoint2D(1,5);
+  // IntPoint2D point_a= new IntPoint2D(1,5);
 }
 }
