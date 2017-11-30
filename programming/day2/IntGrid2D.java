@@ -31,17 +31,17 @@ for(int i=0; i<grid_row; i++){
 }
 }
 
-//takes an IInpoint2D object and places it at the correct index in the grid
-//must subtract the upper left x and lower right y in order to get the correct
-//positive indexes for the 2D array
+//takes an IInpoint2D object and places a character value at that index
+//in the grid, must subtract the upper left x and lower right y in order to
+//get the correct positive indexes for the 2D array
 
 public void setPoint(IIntPoint2D p, char v){
   grid[p.getX()-upper_left_x][p.getY()-lower_right_y]=v;
 }
 
 //gets the character value for a certain IIntPoint2D index on the grid, again
-//we must subtract the upper left x and lower right y to map this index to the
-//correct value in the 2D array
+//must subtract the upper left x and lower right y to map this index to the
+//correct index in the 2D array
 
 public char getPoint(IIntPoint2D p){
   return grid[p.getX()-upper_left_x][p.getY()-lower_right_y];
