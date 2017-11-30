@@ -32,7 +32,7 @@ for(int i=0; i<grid_row; i++){
 }
 
 //takes an IInpoint2D object and places it at the correct index in the grid
-//must subtract the upper left x and lower left y in order to get the correct
+//must subtract the upper left x and lower right y in order to get the correct
 //positive indexes for the 2D array
 
 public void setPoint(IIntPoint2D p, char v){
