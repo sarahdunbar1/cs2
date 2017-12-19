@@ -92,12 +92,7 @@ public class Graph<N,W> implements IGraph<N,W>{
     for(int i=0; i<edges_to_list.size(); i++){
       edges_to_array[i]=edges_to_list.fetch(i);
     }
-    if(edges_to_array.length>0){
     return edges_to_array;
-    }
-    else{
-      return null;
-    }
     }
 
     //adds node to the graph
@@ -175,9 +170,9 @@ public class Graph<N,W> implements IGraph<N,W>{
         g.addEdge(node_1, node_2, 5.0);
         g.addEdge(node_1, node_2, 3.0);
         //g.add("Howdy");
-         g.printEdges(g.getEdgesFrom(node_1));
+        System.out.println(g.fetchNode("Hi"));
         //g.printEdges(g.getEdgeSet());
         //System.out.println(g.fetchNode("Hi"));
-        // System.out.println(g.fetchNode("Bye bye"));
+        System.out.println(g.fetchNode("Bye bye"));
     }
 }
