@@ -27,9 +27,9 @@ public class DiGraphReader implements IGraphReader {
               INode<String> node_1=new GraphNode<String>((String) line_[0]);
               INode<String> node_2= new GraphNode<String>((String)line_[1]);
               weight=Double.parseDouble(line_[2]);//cast string  to a double
-              r.addNodeCheck(node_1.getValue());
-              r.addNodeCheck(node_2.getValue());
-              r.addEdge(node_1,node_2,weight);
+              INode<String> checked_1=r.addNodeCheck(node_1.getValue());
+              INode<String> checked_2=r.addNodeCheck(node_2.getValue());
+              r.addEdge(checked_1,checked_2,weight);
               line=br.readLine();//read next line
             }
         }

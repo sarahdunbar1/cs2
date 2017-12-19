@@ -75,12 +75,8 @@ public class Graph<N,W> implements IGraph<N,W>{
     for(int i=0; i<edges_from_list.size(); i++){
       edges_from_array[i]=edges_from_list.fetch(i);
     }
-    if(edges_from_array.length>0){
     return edges_from_array;
-    }
-    else{
-      return null;
-    }
+
   }
 
 //creates an edge array containing all the source nodes whose destination node is
@@ -123,7 +119,7 @@ public class Graph<N,W> implements IGraph<N,W>{
         }
         else{
           for(int i=0; i<nodes.size(); i++){
-            if(nodes.fetch(i).getValue()==new_node.getValue()){
+            if(nodes.fetch(i).getValue().equals(new_node.getValue())){
               System.out.println("node already exists");
               return nodes.fetch(i);
             }
@@ -147,7 +143,7 @@ public class Graph<N,W> implements IGraph<N,W>{
 
     public void printNodes(INode<N>[] array){
       for(int i=0; i<array.length; i++){
-        System.out.print(array[i].getValue() + " ");
+        System.out.print(array[i] + " ");
         }
         System.out.println();
     }
@@ -169,16 +165,17 @@ public class Graph<N,W> implements IGraph<N,W>{
         g.addNodeCheck(node_1.getValue());
         g.addNodeCheck(node_3.getValue());
         g.addNodeCheck(node_4.getValue());
+        g.addNodeCheck(node_2.getValue());
         //System.out.println(node_2);
-        // g.addEdge(node_1, node_2, 3.0);
-        // g.addEdge(node_1, node_3, 5.0);
-        // g.addEdge(node_1, node_4, 5.0);
-        // g.addEdge(node_3,node_4, 3.0);
-        // g.addEdge(node_1, node_3, 5.0);
-        //g.addEdge(node_1, node_2, 5.0);
-        //g.addEdge(node_1, node_2, 3.0);
+        g.addEdge(node_1, node_2, 3.0);
+        g.addEdge(node_1, node_3, 5.0);
+        g.addEdge(node_1, node_4, 5.0);
+        g.addEdge(node_3,node_4, 3.0);
+        g.addEdge(node_1, node_3, 5.0);
+        g.addEdge(node_1, node_2, 5.0);
+        g.addEdge(node_1, node_2, 3.0);
         //g.add("Howdy");
-         g.printNodes(g.getNodeSet());
+         g.printEdges(g.getEdgesFrom(node_1));
         //g.printEdges(g.getEdgeSet());
         //System.out.println(g.fetchNode("Hi"));
         // System.out.println(g.fetchNode("Bye bye"));
